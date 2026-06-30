@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Monthsary ❤️</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial,sans-serif;
+            background: linear-gradient( 135deg, #ff9ecb, #ffcce6, #ffe6f2, #fff0f5 );
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .love-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .love-word {
+            position: absolute;
+            color: #ff4da6;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: 0 0 8px hotpink;
+            animation: moveLove 4s ease-in-out infinite;
+        }
+
+        .heart {
+            position: fixed;
+            top: -20px;
+            font-size: 20px;
+            animation: fall linear forwards;
+            color: red;
+            pointer-events: none;
+        }
+
+        @keyframes moveLove {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            font-size: 20px;
+            pointer-events: none;
+            animation: sparkle 4s linear forwards;
+        }
+
+        @keyframes sparkle {
+
+            from {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #ff2d75;
+        }
+
+        .section-title {
+            text-align: center;
+            width: 100%;
+            margin: 40px 0 20px 0;
+            color: #ff2d75;
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 10px pink;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yesBtn {
+            background: #ff4f8b;
+            color: white;
+            transition: all .3s ease;
+            transform-origin: center;
+        }
+
+        #noBtn {
+            background: #ff0000;
+            color: white;
+            position: absolute;
+        }
+
+        #flowersPage,
+        #letterPage {
+            display: none;
+        }
+
+        #flowers {
+            width: 350px;
+            max-width: 90%;
+        }
+
+        #envelope {
+            width: 120px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: .3s;
+        }
+
+            #envelope:hover {
+                transform: scale(1.1);
+            }
+
+        .letter {
+            background: white;
+            width: 80%;
+            max-width: 800px;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px auto;
+            box-shadow: 0 0 20px rgba(0,0,0,.2);
+            line-height: 1.8;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+            .video-container video {
+                width: 500px;
+                max-width: 90%;
+                border-radius: 20px;
+                box-shadow: 0 0 20px rgba(255,105,180,.4);
+            }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+
+            .gallery img {
+                width: 280px;
+                height: 280px;
+                object-fit: cover;
+                border-radius: 15px;
+                box-shadow: 0 0 15px rgba(0,0,0,.2);
+                transition: all .4s ease;
+                cursor: pointer;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.08);
+                    box-shadow: 0 0 25px hotpink;
+                }
+
+        .photo-box {
+            position: relative;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            opacity: 0;
+            transition: .4s;
+            font-size: 14px;
+        }
+
+        .photo-box:hover .caption {
+            opacity: 1;
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 25px;
+            animation: float 5s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="love-bg" id="loveBg"></div>
+
+    <!-- PAGE 1 -->
+
+    <div class="page" id="page1">
+
+        <img src="gift.png" style="width:220px;margin-bottom:20px;">
+
+        <h1>Hey Bibiiii ❤️</h1>
+
+        <p>DO YOU WANT TO OPEN YOUR PRESENT??🎁</p>
+
+        <button id="yesBtn">YES❤️</button>
+
+        <button id="noBtn">NO😆</button>
+
+    </div>
+
+    <!-- FLOWERS -->
+
+    <div class="page" id="flowersPage">
+
+        <h1>🌹FLOWERS FOR YOU🌹</h1>
+
+        <img src="flower.png" id="flowers">
+
+        <p>CLICK THE LETTER BELLOW💌</p>
+
+        <img src="envelope.png" id="envelope">
+
+    </div>
+
+    <!-- LETTER -->
+
+    <div id="letterPage">
+
+        <div class="letter">
+
+            <h1>💌 Happy 2nd Monthsary Bibiiii ❤️</h1>
+
+            <p>
+
+                Happy 2nd Monthsary to us bibiiii langinggggg
+                <br><br>
+
+                It honestly feels unreal that we've already spent two months together. Murag bag o pa gani tong nagsugod ta ug storya, nag ilhanay, nagkatawa sa mga random nga butang, ug nagpadayon sa pag discover sa usag usa. Time really flies so fast, but despite how short two months may seem to other people, for me, these past months have been full of memories that I know I'll treasure for a very long time.
+                First of all, thank you.
+                Thank you for staying. Thank you for your patience, your understanding, and your willingness to accept me despite my imperfections. I know there are times nga mahimo kong stubborn, overthinker, or usahay lisod sabton, but you still choose to stay and understand me, and that means so much to me.
+                Thank you for making my days brighter. Every message you send, every update about your day, every picture, every laugh, every random conversation, and even the simple moments nga maghilom lang ta while talking still mean a lot to me. To some people, they may just be ordinary moments, but for me, they became some of my favorite memories because ikaw akong kauban.
+                I never expected that someone could become such an important part of my life in just a short amount of time. But you did. You became someone I look forward to talking to every day. Someone who can instantly make me smile after a tiring day at school. Someone who can somehow make my worries feel lighter just by being there.
+                Kabalo ka, there are times when life gets overwhelming. There are days when I feel tired, stressed, and unmotivated, but somehow, talking to you makes things feel okay again. Murag mawala akong kapoy basta makadungog ko sa imong tingog o makabasa sa imong messages. You became my comfort person, my safe place, and someone I genuinely appreciate having in my life.
+                Thank you for supporting me, for listening to my stories even when they're nonsense, for laughing at my corny jokes, and for making me feel loved in your own simple ways. I appreciate every effort you make, even the smallest ones, because they remind me that I am lucky to have someone like you.
+                I know our relationship is still young. Two months isn't a very long time, and we still have a lot to learn about each other. There will probably be misunderstandings, challenges, and days when things won't always be easy. But I sincerely hope that no matter what happens, we continue choosing each other every single day.
+                I hope we continue communicating honestly, understanding each other's feelings, supporting each other's dreams, and growing together. I hope we keep making memories, taking pictures, recording videos, having late-night talks, laughing over silly things, and creating moments that we can look back on years from now and say (Grabe noh? Diri diay ta nagsugod)
+                Thank you for bringing happiness into my life thank you for making me feel appreciated thank you for being patient with me thank you for being you.
+                As we celebrate our second monthsary, I just want you to know that I am truly grateful to have you. I may not always be the best boyfriend, and I may not always know the right words to say, but one thing I can promise is that my feelings for you are genuine. I will continue trying my best to become someone who deserves your love, trust, and time.
+                Happy 2nd Monthsary my Bibiiii.
+                I hope this is only the beginning of many more monthsaries, anniversaries, adventures, and beautiful memories that we'll create together.
+                No matter how busy life gets, no matter how difficult some days may become, please always remember this:
+                You are loved. You are appreciated. You are important to me. And you will always have someone who will proudly call himself your biggest supporter, your personal cheerleader, and your Number One Fan in the Entire World.
+                I love you more than words can ever explain.
+
+                <br><br>
+
+                Forever Yours,
+
+                <br><br>
+
+                Your number one fan sa tibuok kalibutannnn mwahpss
+
+            </p>
+
+        </div>
+
+        <h1 style="text-align:center;width:100%;display:block;">
+            🎥 Our Special Videos ❤️
+        </h1>
+
+        <div class="video-container">
+
+            <!-- Video 1 -->
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+
+            <!-- Video 2 -->
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+
+            <video controls>
+                <source src="video3.mp4" type="video/mp4">
+            </video>
+
+        </div>
+
+
+
+        <h1 style="text-align:center;width:100%;display:block;">
+            📸 Our Beautiful Memories ❤️
+        </h1>
+
+        <div class="gallery">
+
+            <div class="photo-box">
+                <img src="pic1b.jpg">
+                <div class="caption">My Favorite Person ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic2b.jpg">
+                <div class="caption">Our Happy Moments ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic3b.jpg">
+                <div class="caption">Happy 2nd Monthsary ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic4b.jpg">
+                <div class="caption">Forever Us ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic5b.jpg">
+                <div class="caption">I Love You ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic6b.jpg">
+                <div class="caption">Cutie Bibiiii ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic7b.jpg">
+                <div class="caption">Always Beautiful ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic8b.jpg">
+                <div class="caption">My Happiness ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic9b.jpg">
+                <div class="caption">Sweet Memories ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic10b.jpg">
+                <div class="caption">Pretty Smile ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic11b.jpg">
+                <div class="caption">Forever Together ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic12b.jpg">
+                <div class="caption">My Favorite Girl ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic13b.jpg">
+                <div class="caption">Beautiful Moments ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic14b.jpg">
+                <div class="caption">Lucky To Have You ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic15b.jpg">
+                <div class="caption">You & Me ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic16b.jpg">
+                <div class="caption">Endless Love ❤️</div>
+            </div>
+
+            <div class="photo-box">
+                <img src="pic17b.jpg">
+                <div class="caption">Happy 2nd Monthsary Bibiiii ❤️</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const noBtn = document.getElementById("noBtn");
+        const yesBtn = document.getElementById("yesBtn");
+
+        let yesScale = 1;
+
+        function moveNo(e) {
+
+            // Prevent default touch behavior
+            if (e) e.preventDefault();
+
+            // Random position
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+
+            // Padako ang YES
+            yesScale += 0.3;
+            yesBtn.style.transform = `scale(${yesScale})`;
+
+            // Kung dako na kaayo
+            if (yesScale >= 5) {
+                yesBtn.style.position = "fixed";
+                yesBtn.style.top = "0";
+                yesBtn.style.left = "0";
+                yesBtn.style.width = "100vw";
+                yesBtn.style.height = "100vh";
+                yesBtn.style.fontSize = "60px";
+                yesBtn.style.borderRadius = "0";
+                yesBtn.style.zIndex = "9999";
+                yesBtn.style.transform = "scale(1)";
+            }
+        }
+
+        // PC
+        noBtn.addEventListener("mouseover", moveNo);
+
+        // Cellphone
+        noBtn.addEventListener("touchstart", moveNo);
+
+        // Backup
+        noBtn.addEventListener("click", moveNo);
+
+        document.getElementById("yesBtn").onclick = () => {
+
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("flowersPage").style.display = "flex";
+
+        };
+
+        document.getElementById("envelope").onclick = () => {
+
+            document.getElementById("flowersPage").style.display = "none";
+            document.getElementById("letterPage").style.display = "block";
+
+        };
+
+        function createSparkle() {
+
+            const s = document.createElement("div");
+
+            s.className = "sparkle";
+
+            s.innerHTML = "✨";
+
+            s.style.left = Math.random() * window.innerWidth + "px";
+
+            document.body.appendChild(s);
+
+            setTimeout(() => {
+
+                s.remove();
+
+            }, 4000);
+
+        }
+
+        setInterval(createSparkle, 600);
+
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * window.innerWidth + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+
+
+        function hearts() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * 100 + "vw";
+
+            heart.style.fontSize = (20 + Math.random() * 30) + "px";
+
+            heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+
+        }
+
+        setInterval(hearts, 250);
+
+    </script>
+
+</body>
+</html>
